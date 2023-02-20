@@ -17,7 +17,8 @@ function translate() {
   console.log(textToTranslate);
 
   // ping our api server, adding the input text to the url
-  fetch("http://localhost:3000/api/" + textToTranslate)
+  // fetch("http://localhost:3000/api/" + textToTranslate)
+  fetch("https://dig345-p1-social-media.vercel.app/api/" + textToTranslate)
   .then((response) => {
     console.log(response);
     return response.json();
