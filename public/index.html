@@ -15,11 +15,32 @@
   </head>
 
   <body>
-    <h1>dig345-P1</h1>
+    <div class="container">
+      <h1>dig345-P1</h1>
 
-    <form action="">
-      <button id="button"></button>
-    </form>
+      <form class="form-inline" action="" onsubmit="handleSubmit(event)">
+        <div class="row">
+          <h4>Protoype for random language translation</h4>
+          <div class="col">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="text to post"
+              id="textToTranslate"
+            />
+          </div>
+          <div class="col">
+            <button type="submit" class="btn btn-primary" id="translateBtn">
+              Submit
+            </button>
+          </div>
+        </div>
+      </form>
+
+      <p id="notTranslated">placeholder</p>
+      <p id="translated">placeholder</p>
+      <p id="language">placeholder</p>
+    </div>
 
     <!-- jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -30,6 +51,12 @@
       crossorigin="anonymous"
     ></script>
     <!-- Project JS -->
-    <script src="assets/js/main.js"></script>
+    <script src="main.js"></script>
+    <script>
+      function handleSubmit(event) {
+        event.preventDefault();
+        // code to handle form submission goes here
+      }
+    </script>
   </body>
 </html>

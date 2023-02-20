@@ -2,7 +2,7 @@
 	"name": "dig345-p1-social-media",
 	"version": "1.0.0",
 	"description": "",
-	"main":  "./index.js",
+	"main": "./index.js",
 	"scripts": {
 		"start": "node s ./index.js",
 		"start-dev": "nodemon --ext '*' --trace-warnings server.js",
@@ -11,9 +11,10 @@
 	},
 	"author": "",
 	"license": "ISC",
-    "dependencies": {
-        "express": "latest",
-        "node-fetch": "2",
-        "nodemon": "latest"
-    }
+	"dependencies": {
+		"express": "latest",
+		"mongodb": "^5.0.1",
+		"node-fetch": "2",
+		"nodemon": "latest"
+	}
 }

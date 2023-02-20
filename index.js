@@ -4,13 +4,11 @@ const express = require("express");
 const app = express();
 const port = 3000;
 
-const serviceUrl = "https://developers.lingvolive.com";
+// api key
+const apiKey = "AIzaSyCdlDmZicdxh3rk6v6cMa4waBYCvYfbEy8";
 
-const apiKey =
-  "MDcyZDlmYTktYjBkOS00ODlmLWI1NGQtZWIwMmM2Y2ZmOTAxOjE5MGIyMTg1NTMwMzRiZmI5Njg5NTQ3MzBiMTZmMmFj";
-
-// global token for authentication
-var token = "";
+// top languages
+const languages = ["es", "zh-CN", "hi", "ar", "pt", "bn", "ru", "ja", "pa", "de"];
 
 // this is the default api endpoint
 app.get("/api", async (req, res) => {
@@ -21,12 +19,41 @@ app.get("/api", async (req, res) => {
 
 // this is the data api endpoint
 app.get("/api/:textToTranslate?", async (req, res) => {
+  const text = req.params.textToTranslate;
+  const targetLanguage = languages[Math.floor(Math.random() * languages.length)];
+
+  fetch(
+    `https://translation.googleapis.com/language/translate/v2?key=${apiKey}`,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        q: text,
+        target: targetLanguage,
+      }),
+    }
+  )
+    .then((response) => response.json())
+    .then((data) => {
+      // Handle the response data
+      console.log(data.data.translations[0].translatedText);
+      res.json({
+        translated: data.data.translations[0].translatedText,
+        language: targetLanguage
+      })
+    })
+    .catch((error) => {
+      // Handle any errors
+      console.error(error);
+    });
 });
 
 // sets up path to serve static files
 const path = require("path");
 const { get } = require("https");
-const { response } = require("express");
+const { response, json } = require("express");
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.static(path.join(__dirname, "assets/js")));
 app.use(express.static(path.join(__dirname, "assets/css")));
@@ -36,6 +63,3 @@ app.use(express.static(path.join(__dirname, "assets/img")));
 app.listen(port, async () => {
   console.log(`Social media app listening on port ${port}`);
 });
-
-
-
