@@ -1,0 +1,19 @@
+{
+	"name": "dig345-p1-social-media",
+	"version": "1.0.0",
+	"description": "",
+	"main":  "./index.js",
+	"scripts": {
+		"start": "node s ./index.js",
+		"start-dev": "nodemon --ext '*' --trace-warnings server.js",
+		"start-https": "nodemon server-https.js",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "",
+	"license": "ISC",
+    "dependencies": {
+        "express": "latest",
+        "node-fetch": "2",
+        "nodemon": "latest"
+    }
+}
