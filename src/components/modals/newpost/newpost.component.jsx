@@ -48,7 +48,8 @@ export default function PostModal() {
   const handlePostUpload = () => {
     // Handle post upload logic here
     console.log(`Uploading post with text: ${postText}`);
-    fetch(`http://localhost:8000/api/${postText}`)
+    fetch(`https://dig345-p1-social-media.vercel.app/api/${postText}`)
+    // fetch(`http://localhost:8000/api/${postText}`)
 
     // Reset post text after upload
     setPostText("");
