@@ -98,7 +98,7 @@ app.use(express.static(path.join(__dirname, "assets/css")));
 app.use(express.static(path.join(__dirname, "assets/img")));
 
 // starts the server
-// app.listen(port, async () => {
-//   console.log(`Social media app listening on port ${port}`);
-// });
+app.listen(port, async () => {
+  console.log(`Social media app listening on port ${port}`);
+});
 
