@@ -31,7 +31,7 @@ export default function PostModal() {
   const [open, setOpen] = useState(false);
   const handleCloseNewPost = () => {
     setOpen(false)
-    setTimeout(window.location.reload(), 2000)
+    // setTimeout(window.location.reload(), 2000)
   };
 
   const handleClose = () => {
@@ -49,12 +49,12 @@ export default function PostModal() {
     // Handle post upload logic here
     console.log(`Uploading post with text: ${postText}`);
     fetch(`https://dig345-p1-social-media.vercel.app/api/${postText}`)
-
+    .then(() => {
     // Reset post text after upload
-    setPostText("");
-
+      setPostText("");
     // Close the modal after upload
-    handleCloseNewPost();
+      handleCloseNewPost();
+    })
   };
 
   return (
