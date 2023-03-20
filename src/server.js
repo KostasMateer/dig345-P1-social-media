@@ -1,7 +1,7 @@
 // basic requirements for express node app
 const fetch = require("node-fetch");
 const express = require("express");
-const database = require("./database.js")
+const database = require("./database.js");
 const app = express();
 const cors = require('cors');
 const port = 8000;
@@ -102,24 +102,3 @@ app.listen(port, async () => {
   console.log(`Social media app listening on port ${port}`);
 });
 
-// function test() {
-//   fetch("http://localhost:3000/allposts")
-//   .then((response) => {
-//     console.log('here')
-//     return response.json()
-//   })
-//   .then((data)=>{
-//     lastItem = data[data.length-1]
-//     date = new Date(lastItem.time)
-//     anotherDate = Date.parse(lastItem.time)
-//     console.log(anotherDate)
-//     console.log(date.getMonth()+1)
-//     console.log(date.getDate())
-//     console.log(date.getFullYear())
-//   })
-//   .catch((err)=>{
-//     console.log(err)
-//   })
-// }
-
-// test()
