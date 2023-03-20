@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/dig345-P1-social-media/static/css/main.dd311939.css",
-    "main.js": "/dig345-P1-social-media/static/js/main.2121ce49.js",
-    "static/media/laughingcat.png": "/dig345-P1-social-media/static/media/laughingcat.782c4bb2c1deb7e4996b.png",
-    "static/media/scaredcat.png": "/dig345-P1-social-media/static/media/scaredcat.75febbf249fe7e7b2d1a.png",
-    "static/media/sadcat.png": "/dig345-P1-social-media/static/media/sadcat.d726de25b4764a0f5181.png",
-    "static/media/smirkcat.png": "/dig345-P1-social-media/static/media/smirkcat.ee94d4c8fb1f0797c0ba.png",
-    "static/media/smilingcat.png": "/dig345-P1-social-media/static/media/smilingcat.23e5314224d1cfa739d9.png",
-    "index.html": "/dig345-P1-social-media/index.html",
-    "main.dd311939.css.map": "/dig345-P1-social-media/static/css/main.dd311939.css.map",
-    "main.2121ce49.js.map": "/dig345-P1-social-media/static/js/main.2121ce49.js.map"
+    "main.css": "https://kostasmateerstudent.github.io/dig345-P1-social-media/static/css/main.dd311939.css",
+    "main.js": "https://kostasmateerstudent.github.io/dig345-P1-social-media/static/js/main.f72e51b2.js",
+    "static/media/laughingcat.png": "https://kostasmateerstudent.github.io/dig345-P1-social-media/static/media/laughingcat.782c4bb2c1deb7e4996b.png",
+    "static/media/scaredcat.png": "https://kostasmateerstudent.github.io/dig345-P1-social-media/static/media/scaredcat.75febbf249fe7e7b2d1a.png",
+    "static/media/sadcat.png": "https://kostasmateerstudent.github.io/dig345-P1-social-media/static/media/sadcat.d726de25b4764a0f5181.png",
+    "static/media/smirkcat.png": "https://kostasmateerstudent.github.io/dig345-P1-social-media/static/media/smirkcat.ee94d4c8fb1f0797c0ba.png",
+    "static/media/smilingcat.png": "https://kostasmateerstudent.github.io/dig345-P1-social-media/static/media/smilingcat.23e5314224d1cfa739d9.png",
+    "index.html": "https://kostasmateerstudent.github.io/dig345-P1-social-media/index.html",
+    "main.dd311939.css.map": "https://kostasmateerstudent.github.io/dig345-P1-social-media/static/css/main.dd311939.css.map",
+    "main.f72e51b2.js.map": "https://kostasmateerstudent.github.io/dig345-P1-social-media/static/js/main.f72e51b2.js.map"
   },
   "entrypoints": [
     "static/css/main.dd311939.css",
-    "static/js/main.2121ce49.js"
+    "static/js/main.f72e51b2.js"
   ]
 }
