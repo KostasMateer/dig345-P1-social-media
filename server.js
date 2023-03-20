@@ -5,7 +5,7 @@ const express = require("express");
 const database = require("./src/database.js");
 const app = express();
 const cors = require('cors');
-const port = 8000;
+const port = 3000;
 
 app.use(express.static(path.join(__dirname, "build")));
 app.use(express.static(path.join(__dirname, "public")));

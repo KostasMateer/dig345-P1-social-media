@@ -2,7 +2,11 @@
     "version": 2,
     "builds": [
       {
-        "src": "package.json",
+        "src": "server.js",
+        "use": "@vercel/node"
+      },
+      {
+        "src": "src/index.js",
         "use": "@vercel/static-build",
         "config": {
           "buildCommand": "npm run build",
@@ -13,7 +17,7 @@
     "routes": [
       {
         "src": "/(.*)",
-        "dest": "/build/index.html"
+        "dest": "/server.js"
       }
     ]
   }
