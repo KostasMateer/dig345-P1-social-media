@@ -93,8 +93,6 @@ app.get("/allposts", (req, res) => {
 });
 
 // sets up path to serve static files
-const { get } = require("https");
-const { response, json } = require("express");
 app.use(express.static(path.join(__dirname, "public")));
 
 // starts the server
