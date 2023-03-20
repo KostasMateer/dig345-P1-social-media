@@ -12,7 +12,6 @@ export default function App() {
   // API Call
   const [data, setData] = useState([]);
   useEffect(() => {
-    // fetch("http://localhost:8000/allposts")
     fetch("https://dig345-p1-social-media.vercel.app/allposts")
       .then((response) => {
         return response.json();
