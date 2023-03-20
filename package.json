@@ -1,7 +1,7 @@
 {
   "name": "my-app",
   "version": "0.1.0",
-  "homepage": "https://dig345-p1-social-media.vercel.app/",
+  "homepage": "https://dig345-p1-social-media.vercel.app",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.6",
