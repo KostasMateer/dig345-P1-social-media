@@ -1,5 +1,5 @@
 // basic requirements for express node app
-const fetch = require("node-fetch");
+// const fetch = require("node-fetch");
 const express = require("express");
 const database = require("./database.js");
 const app = express();
