@@ -1,10 +1,14 @@
 // basic requirements for express node app
 // const fetch = require("node-fetch");
+const path = require("path");
 const express = require("express");
 const database = require("./src/database.js");
 const app = express();
 const cors = require('cors');
 const port = 8000;
+
+app.use(express.static(path.join(__dirname, "build")));
+app.use(express.static(path.join(__dirname, "public")));
 
 // api key
 const apiKey = "AIzaSyCdlDmZicdxh3rk6v6cMa4waBYCvYfbEy8";
@@ -89,14 +93,9 @@ app.get("/allposts", (req, res) => {
 });
 
 // sets up path to serve static files
-const path = require("path");
 const { get } = require("https");
 const { response, json } = require("express");
 app.use(express.static(path.join(__dirname, "public")));
-app.use(express.static(path.join(__dirname, "assets/js")));
-app.use(express.static(path.join(__dirname, "assets/css")));
-app.use(express.static(path.join(__dirname, "assets/img")));
-app.use(express.static(path.join(__dirname, "build")));
 
 // starts the server
 app.listen(port, async () => {
