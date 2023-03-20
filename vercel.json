@@ -2,11 +2,11 @@
     "version": 2,
     "name": "dig345-p1-social-media",
     "builds": [{
-        "src": "./src/server.js",
+        "src": "./server.js",
         "use": "@vercel/node"
     }],
     "routes": [{
         "src": "/(.*)",
-        "dest": "/src/server.js"
+        "dest": "/server.js"
     }]
 }
