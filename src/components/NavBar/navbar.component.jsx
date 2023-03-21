@@ -1,9 +1,7 @@
-import { Typography, Grid, useMediaQuery } from "@mui/material"
+import { Typography, Grid } from "@mui/material"
 import "./navbar.style.css"
 
 function Navbar({image, title}) {
-    const isSmallScreen = useMediaQuery('(max-width: 899px)')
-
     return (
         <Grid className="navbar-color" sx={{position: 'sticky', top:-20}} container spacing={2}>
             <Grid item xs={4} sm={3} md={2}>
