@@ -1,5 +1,5 @@
 .center-text {
-    padding-top: 0.5rem;
+    padding-top: 1rem;
     padding-left: 1rem;
 }
 
@@ -11,3 +11,10 @@
 .center-image {
     padding-top: 0.5rem;
 }
+
+.center-image img {
+    display: block;
+    max-height: 100%;
+    max-width: 100%;
+  }
+  
