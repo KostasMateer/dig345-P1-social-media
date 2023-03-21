@@ -2,15 +2,16 @@ import { useState } from "react";
 import Box from "@mui/material/Box";
 import AddIcon from '@mui/icons-material/Add';
 import Typography from "@mui/material/Typography";
+import CloseIcon from '@mui/icons-material/Close';
 import Modal from "@mui/material/Modal";
-import { Fab, TextField, Button } from "@mui/material";
+import { Fab, TextField, Button, IconButton } from "@mui/material";
 
 const style = {
   position: "absolute",
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 500,
+  width: "80%",
   bgcolor: "background.paper",
   border: "2px solid #000",
   boxShadow: 24,
@@ -24,6 +25,8 @@ const style = {
   buttonContainer: {
     display: "flex",
     justifyContent: "flex-end",
+    width: "100%",
+    marginLeft: "auto"
   },
 };
 
@@ -70,6 +73,9 @@ export default function PostModal() {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
+          <IconButton sx={{ position: "absolute", top: 0, left: 0 }} onClick={handleClose}>
+            <CloseIcon />
+          </IconButton>
           <Typography id="modal-modal-title" variant="h6" component="h2">
             Upload Post
           </Typography>
@@ -84,10 +90,7 @@ export default function PostModal() {
           onChange={handlePostTextChange}
           sx={style.inputField}
         />
-        <div sx={style.buttonContainer}>
-          <Button variant="outlined" onClick={handleClose}>
-            Cancel
-          </Button>
+        <div style={style.buttonContainer}>
           <Button variant="contained" color="primary" onClick={handlePostUpload}>
             Upload
           </Button>
