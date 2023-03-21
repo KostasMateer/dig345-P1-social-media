@@ -7,7 +7,7 @@ const images = [require('../../images/laughingcat.png'), require('../../images/s
 function Post(props) {
   const date = new Date(props.date);
   const fullDate = (date.getMonth() + 1) + "/" + date.getDate() + "/" + date.getFullYear()
-  const timeOfPost = `${(date.getHours < 12) ? date.getHours() : date.getHours() - 12}:${date.getMinutes()}${(date.getHours < 12) ? "am" : "pm"}`
+  const timeOfPost = `${(date.getHours < 12) ? date.getHours() : date.getHours() - 12}:${(date.getMinutes() < 10) ? "0" + date.getMinutes() : date.getMinutes()}${(date.getHours < 12) ? "am" : "pm"}`
 
   const [text, setText] = useState(props.translated);
 
