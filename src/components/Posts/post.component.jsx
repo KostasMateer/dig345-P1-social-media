@@ -19,7 +19,7 @@ function Post(props) {
     return (
       <Paper className="post-color">
         <Grid className="spacing + no-top-padding" container columns={9} spacing={2}>
-          <Grid item xs={3} sm={1} md={1}>
+          <Grid item xs={3} sm={2} md={1}>
             <img src={randomProfile} alt="Profile Pic" height={50} width={50} />
             <Stack sx={{display: {'xs': 'flex', md: 'none' }, 'paddingTop': '1em'}}>
             <Typography variant="subtitle1">{props.language}</Typography>

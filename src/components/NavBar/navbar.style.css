@@ -1,6 +1,5 @@
 .center-text {
     padding-top: 1rem;
-    padding-left: 1rem;
 }
 
 .navbar-color {
@@ -9,7 +8,9 @@
 }
 
 .center-image {
-    padding-top: 0.5rem;
+    padding-left: 1rem;
+    padding-top: 1rem;
+    justify-content: right;
 }
 
 .center-image img {
