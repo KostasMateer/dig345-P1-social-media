@@ -6,6 +6,8 @@ import CloseIcon from '@mui/icons-material/Close';
 import Modal from "@mui/material/Modal";
 import { Fab, TextField, Button, IconButton } from "@mui/material";
 
+const MAX_CHARACTERS = 250;
+
 const style = {
   position: "absolute",
   top: "50%",
@@ -28,6 +30,14 @@ const style = {
     width: "100%",
     marginLeft: "auto"
   },
+  ticker: {
+    color: '#484848',
+    fontSize: '1rem',
+    fontWeight: 'bold',
+    marginLeft: 'auto',
+    marginRight: '20px',
+    marginBottom: '10px',
+  }
 };
 
 export default function PostModal() {
@@ -45,9 +55,16 @@ export default function PostModal() {
 
   const [postText, setPostText] = useState("");
 
+  const [charactersRemaining, setCharactersRemaining] = useState(MAX_CHARACTERS);
+
   const handlePostTextChange = (event) => {
-    setPostText(event.target.value);
+    const inputText = event.target.value;
+    if (inputText.length <= 250) {
+      setPostText(inputText);
+      setCharactersRemaining(MAX_CHARACTERS - inputText.length);
+    }
   };
+  
 
   const handlePostUpload = () => {
     // Handle post upload logic here
@@ -80,7 +97,6 @@ export default function PostModal() {
             Upload Post
           </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            {/* Add form fields here to allow the user to upload a post */}
           </Typography>
           <TextField
           id="post-text-input"
@@ -89,7 +105,11 @@ export default function PostModal() {
           value={postText}
           onChange={handlePostTextChange}
           sx={style.inputField}
-        />
+          inputProps={{
+            maxLength: MAX_CHARACTERS,
+          }}
+          />
+          <Typography sx={style.ticker}>{charactersRemaining}</Typography>
         <div style={style.buttonContainer}>
           <Button variant="contained" color="primary" onClick={handlePostUpload}>
             Upload
