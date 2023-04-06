@@ -1,0 +1,21 @@
+.center-text {
+    padding-top: 1.3rem;
+}
+
+.navbar-color {
+    background-color: #9FA8DA;
+    padding-bottom: 8px;
+}
+
+.center-image {
+    padding-left: 1rem;
+    padding-top: 1rem;
+    justify-content: right;
+}
+
+.center-image img {
+    display: block;
+    max-height: 100%;
+    max-width: 100%;
+  }
+  
