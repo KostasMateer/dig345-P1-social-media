@@ -1,7 +1,8 @@
 const { MongoClient } = require("mongodb");
+require('dotenv').config()
 
 const uri =
-  "mongodb+srv://admin:E5Brm6imws5J4GfK@dig345-p1-social-media.gcosjqx.mongodb.net/?retryWrites=true&w=majority";
+  `mongodb+srv://${process.env.ADMIN_USER}:${process.env.ADMIN_PASSWORD}@dig345-p1-social-media.gcosjqx.mongodb.net/?retryWrites=true&w=majority`;
 
 // Create a new MongoClient instance with the provided URI
 const client = new MongoClient(uri, {

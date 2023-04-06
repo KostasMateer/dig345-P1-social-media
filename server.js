@@ -6,12 +6,13 @@ const database = require("./src/database.js");
 const app = express();
 const cors = require('cors');
 const port = 3000;
+require('dotenv').config()
 
 app.use(express.static(path.join(__dirname, "build")));
 app.use(express.static(path.join(__dirname, "public")));
 
 // api key
-const apiKey = "AIzaSyCdlDmZicdxh3rk6v6cMa4waBYCvYfbEy8";
+const apiKey = process.env.API_KEY;
 
 app.use(cors({
   origin: 'http://localhost:3000'
