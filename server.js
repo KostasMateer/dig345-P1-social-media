@@ -1,12 +1,12 @@
 // basic requirements for express node app
-// const fetch = require("node-fetch");
+require('dotenv').config()
 const path = require("path");
 const express = require("express");
 const database = require("./src/database.js");
 const app = express();
 const cors = require('cors');
 const port = 3000;
-require('dotenv').config()
+
 
 app.use(express.static(path.join(__dirname, "build")));
 app.use(express.static(path.join(__dirname, "public")));

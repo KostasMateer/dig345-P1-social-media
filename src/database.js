@@ -1,8 +1,10 @@
+require('dotenv').config();
 const { MongoClient } = require("mongodb");
-require('dotenv').config()
+const admin_user = process.env.DATABASE_USER
+const admin_pass = process.env.DATABASE_PASSWORD
 
 const uri =
-  `mongodb+srv://${process.env.ADMIN_USER}:${process.env.ADMIN_PASSWORD}@dig345-p1-social-media.gcosjqx.mongodb.net/?retryWrites=true&w=majority`;
+  `mongodb+srv://${admin_user}:${admin_pass}@dig345-p1-social-media.gcosjqx.mongodb.net/?retryWrites=true&w=majority`;
 
 // Create a new MongoClient instance with the provided URI
 const client = new MongoClient(uri, {
