@@ -1,12 +1,12 @@
 import { useState } from "react";
 import Box from "@mui/material/Box";
-import AddIcon from '@mui/icons-material/Add';
+import AddIcon from "@mui/icons-material/Add";
 import Typography from "@mui/material/Typography";
-import CloseIcon from '@mui/icons-material/Close';
+import CloseIcon from "@mui/icons-material/Close";
 import Modal from "@mui/material/Modal";
 import { Fab, TextField, Button, IconButton } from "@mui/material";
 
-const MAX_CHARACTERS = 250;
+const MAX_CHARACTERS = 100;
 
 const style = {
   position: "absolute",
@@ -28,16 +28,16 @@ const style = {
     display: "flex",
     justifyContent: "flex-end",
     width: "100%",
-    marginLeft: "auto"
+    marginLeft: "auto",
   },
   ticker: {
-    color: '#484848',
-    fontSize: '1rem',
-    fontWeight: 'bold',
-    marginLeft: 'auto',
-    marginRight: '20px',
-    marginBottom: '10px',
-  }
+    color: "#484848",
+    fontSize: "1rem",
+    fontWeight: "bold",
+    marginLeft: "auto",
+    marginRight: "20px",
+    marginBottom: "10px",
+  },
 };
 
 export default function PostModal() {
@@ -49,13 +49,14 @@ export default function PostModal() {
   };
 
   const handleClose = () => {
-    setOpen(false)
+    setOpen(false);
   };
   const handleOpen = () => setOpen(true);
 
   const [postText, setPostText] = useState("");
 
-  const [charactersRemaining, setCharactersRemaining] = useState(MAX_CHARACTERS);
+  const [charactersRemaining, setCharactersRemaining] =
+    useState(MAX_CHARACTERS);
 
   const handlePostTextChange = (event) => {
     const inputText = event.target.value;
@@ -64,23 +65,28 @@ export default function PostModal() {
       setCharactersRemaining(MAX_CHARACTERS - inputText.length);
     }
   };
-  
 
   const handlePostUpload = () => {
     // Handle post upload logic here
     console.log(`Uploading post with text: ${postText}`);
-    fetch(`https://dig345-p1-social-media.vercel.app/api/${postText}`)
-    .then(() => {
-      // Reset post text after upload
-      setPostText("");
-      // Close the modal after upload
-      handleCloseNewPost();
-    })
+    fetch(`https://dig345-p1-social-media.vercel.app/api/${postText}`).then(
+      () => {
+        // Reset post text after upload
+        setPostText("");
+        // Close the modal after upload
+        handleCloseNewPost();
+      }
+    );
   };
 
   return (
     <div>
-      <Fab sx={{position: 'fixed', bottom: 16, right: 16}} onClick={handleOpen} color="#484848" aria-label="add">
+      <Fab
+        sx={{ position: "fixed", bottom: 16, right: 16 }}
+        onClick={handleOpen}
+        color="#484848"
+        aria-label="add"
+      >
         <AddIcon />
       </Fab>
       <Modal
@@ -90,31 +96,35 @@ export default function PostModal() {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <IconButton sx={{ position: "absolute", top: 0, left: 0 }} onClick={handleClose}>
+          <IconButton
+            sx={{ position: "absolute", top: 0, left: 0 }}
+            onClick={handleClose}
+          >
             <CloseIcon />
           </IconButton>
           <Typography id="modal-modal-title" variant="h6" component="h2">
             Upload Post
           </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-          </Typography>
-          <TextField
-          id="post-text-input"
-          label="Post text"
-          variant="outlined"
-          value={postText}
-          onChange={handlePostTextChange}
-          sx={style.inputField}
-          inputProps={{
-            maxLength: MAX_CHARACTERS,
-          }}
-          />
-          <Typography sx={style.ticker}>{charactersRemaining}</Typography>
-        <div style={style.buttonContainer}>
-          <Button variant="contained" color="primary" onClick={handlePostUpload}>
-            Upload
-          </Button>
-        </div>
+          <Typography id="modal-modal-description" sx={{ mt: 2 }}></Typography>
+          <form onSubmit={handlePostUpload}>
+            <TextField
+              id="post-text-input"
+              label="Post text"
+              variant="outlined"
+              value={postText}
+              onChange={handlePostTextChange}
+              sx={style.inputField}
+              inputProps={{
+                maxLength: MAX_CHARACTERS,
+              }}
+            />
+            <Typography sx={style.ticker}>{charactersRemaining}</Typography>
+            <div style={style.buttonContainer}>
+              <Button variant="contained" color="primary" type="submit">
+                Upload
+              </Button>
+            </div>
+          </form>
         </Box>
       </Modal>
     </div>
