@@ -39,7 +39,7 @@ export default function AboutModal() {
       >
         <Box sx={style}>
           <Typography id="modal-modal-title" variant="h6" component="h2">
-            Welcome to What the @!#$!
+            Welcome to <i>Lost in Translation</i>
           </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
             We are a social media platform that celebrates language and culture.

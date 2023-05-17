@@ -34,7 +34,7 @@ export default function App() {
     <div className="App">
       <Navbar
         image={require("./images/logo.png")}
-        title="What the @!#$!"
+        title="Lost in Translation"
       ></Navbar>
       <div sx={{"marginTop": "74px"}}>
       <Grid container>
